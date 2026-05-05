@@ -194,7 +194,7 @@ export default function Solution() {
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="/process"
+            href="/#how-it-works"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-indigo-600 font-semibold text-base group transition-colors"
           >
             了解完整方法论
@@ -210,7 +210,7 @@ export default function Solution() {
           </a>
           <span className="text-gray-300 hidden sm:block">|</span>
           <a
-            href="/contact"
+            href="/#cta"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-base hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25 transition-all"
           >
             立即预约免费诊断

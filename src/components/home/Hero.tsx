@@ -92,14 +92,14 @@ export default function Hero() {
               className="flex flex-wrap gap-4"
             >
               <Link
-                href="/contact"
+                href="/#cta"
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-base hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-200 group"
               >
                 预约免费咨询
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/process"
+                href="/#how-it-works"
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border border-white/20 text-white font-semibold text-base hover:bg-white/10 hover:border-white/30 transition-all duration-200"
               >
                 了解我们的方法

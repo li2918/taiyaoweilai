@@ -186,10 +186,10 @@ export default function ServicesPreview() {
           className="mt-10 text-center"
         >
           <Link
-            href="/services"
+            href="/#cta"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-200 group"
           >
-            查看全部服务详情
+            咨询服务方案
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

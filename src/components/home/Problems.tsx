@@ -204,7 +204,7 @@ export default function Problems() {
               </p>
             </div>
             <a
-              href="/contact"
+              href="/#cta"
               className="mt-6 inline-flex items-center gap-2 text-blue-300 hover:text-blue-200 font-semibold text-sm group transition-colors"
             >
               预约免费诊断

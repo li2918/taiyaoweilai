@@ -156,10 +156,10 @@ export default function IndustriesPreview() {
           className="mt-10 text-center"
         >
           <Link
-            href="/industries"
+            href="/#cta"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border-2 border-blue-600 text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition-all duration-200 group"
           >
-            查看全行业解决方案
+            咨询您的行业方案
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>

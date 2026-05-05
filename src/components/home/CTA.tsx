@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowRight, Calendar, MessageCircle } from "lucide-react";
 
 export default function CTA() {
@@ -79,14 +78,14 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
-          <Link
-            href="/contact"
+          <a
+            href="mailto:hello@taiyaofuture.com?subject=%E9%A2%84%E7%BA%A6%E5%85%8D%E8%B4%B9%E5%92%A8%E8%AF%A2%20-%20%E5%A4%AA%E8%80%80%E6%9C%AA%E6%9D%A5"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-blue-700 font-bold text-base hover:bg-blue-50 shadow-xl shadow-blue-900/30 transition-all duration-200 group"
           >
             <Calendar className="w-5 h-5" />
             预约免费咨询
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
           <a
             href="mailto:hello@taiyaofuture.com"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-white/30 text-white font-semibold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-200"

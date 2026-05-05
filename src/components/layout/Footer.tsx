@@ -2,34 +2,23 @@ import Link from "next/link";
 import { Mail, MessageCircle, Linkedin, ArrowUpRight } from "lucide-react";
 
 const footerLinks = {
-  services: {
-    label: "服务",
+  navigation: {
+    label: "导航",
     links: [
-      { href: "/services#diagnostics", label: "AI运营诊断" },
-      { href: "/services#redesign", label: "流程重构设计" },
-      { href: "/services#automation", label: "AI自动化系统" },
-      { href: "/services#agent", label: "AI Agent集成" },
-      { href: "/services#consulting", label: "持续优化顾问" },
+      { href: "/#hero", label: "首页" },
+      { href: "/#problems", label: "痛点诊断" },
+      { href: "/#solution", label: "解决方案" },
+      { href: "/#services", label: "核心服务" },
+      { href: "/#how-it-works", label: "落地流程" },
     ],
   },
-  company: {
-    label: "公司",
+  more: {
+    label: "更多",
     links: [
-      { href: "/about", label: "关于我们" },
-      { href: "/process", label: "方法论" },
-      { href: "/industries", label: "服务行业" },
-      { href: "/contact", label: "联系我们" },
-    ],
-  },
-  industries: {
-    label: "行业",
-    links: [
-      { href: "/industries#education", label: "教育培训" },
-      { href: "/industries#healthcare", label: "医疗健康" },
-      { href: "/industries#retail", label: "零售连锁" },
-      { href: "/industries#services", label: "专业服务" },
-      { href: "/industries#local", label: "本地服务" },
-      { href: "/industries#manufacturing", label: "制造业" },
+      { href: "/#why-us", label: "关于我们" },
+      { href: "/#industries", label: "服务行业" },
+      { href: "/#outcomes", label: "客户成果" },
+      { href: "/#cta", label: "联系我们" },
     ],
   },
 };
@@ -41,10 +30,10 @@ export default function Footer() {
     <footer className="bg-[#0A1628]">
       {/* Top section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-3 group w-fit">
+            <Link href="/#hero" className="flex items-center gap-3 group w-fit">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold">太</span>
               </div>
@@ -145,7 +134,7 @@ export default function Footer() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/#cta"
               className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-semibold rounded-xl hover:from-blue-500 hover:to-indigo-500 transition-all shadow-lg shadow-blue-500/25 whitespace-nowrap"
             >
               预约免费咨询
@@ -162,14 +151,6 @@ export default function Footer() {
             <p>
               &copy; {currentYear} 太耀未来 TaiYao Future. 保留所有权利。
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="/privacy" className="hover:text-blue-400 transition-colors">
-                隐私政策
-              </Link>
-              <Link href="/terms" className="hover:text-blue-400 transition-colors">
-                服务条款
-              </Link>
-            </div>
           </div>
         </div>
       </div>
