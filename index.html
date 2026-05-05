@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI OpsFlow | AI运营流程重构解决方案</title>
+  <meta name="description" content="AI OpsFlow 帮助中小企业分析运营流程、识别效率瓶颈，并落地 AI 自动化解决方案，实现降本、提效与增长。" />
+  <meta name="keywords" content="AI OpsFlow,AI运营,流程自动化,AI Agent,中小企业AI,运营优化,流程重构" />
+  <meta name="author" content="AI OpsFlow" />
+  <meta property="og:title" content="AI OpsFlow | AI运营流程重构解决方案" />
+  <meta property="og:description" content="用 AI 重构你的运营流程。我们帮助中小企业找出流程瓶颈，落地 AI 自动化方案。" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0A1628" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="AI OpsFlow 首页">
+        <span class="nav__logo" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#logoGrad)"/>
+            <path d="M10 21V11l6 6 6-6v10" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="2" y1="2" x2="30" y2="30">
+                <stop stop-color="#3B82F6"/>
+                <stop offset="1" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="nav__name">
+          <strong>AI OpsFlow</strong>
+          <small>用 AI 重构你的运营流程</small>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="主导航">
+        <a href="#pain-points">痛点</a>
+        <a href="#solution">解决方案</a>
+        <a href="#methodology">方法论</a>
+        <a href="#services">服务</a>
+        <a href="#use-cases">应用场景</a>
+        <a href="#why-us">为何选择</a>
+      </nav>
+
+      <a href="#cta" class="btn btn--primary nav__cta">预约免费诊断</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__glow hero__glow--a"></div>
+      <div class="hero__glow hero__glow--b"></div>
+      <div class="hero__grid"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <span class="badge">
+          <span class="badge__dot"></span>
+          AI 驱动的运营变革专家
+        </span>
+
+        <h1 class="hero__title">
+          用 <span class="text-gradient">AI</span> 重构<br/>
+          你的运营流程
+        </h1>
+        <p class="hero__subtitle">
+          我们帮助中小企业梳理运营流程、识别效率瓶颈，并落地 AI 自动化方案，让企业少用人、少出错、跑得更快。
+        </p>
+        <p class="hero__sub-en">Rebuild Your Operations with AI</p>
+
+        <div class="hero__actions">
+          <a href="#cta" class="btn btn--primary btn--lg">
+            预约免费诊断
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#solution" class="btn btn--ghost btn--lg">查看解决方案</a>
+        </div>
+
+        <ul class="hero__trust">
+          <li><span class="check">✓</span> 1 个工作日响应</li>
+          <li><span class="check">✓</span> 免费初步诊断</li>
+          <li><span class="check">✓</span> 可量化效果</li>
+        </ul>
+      </div>
+
+      <!-- Flow diagram -->
+      <div class="hero__visual reveal">
+        <div class="flow">
+          <div class="flow__title">
+            <span class="flow__title-en">AI Operations Loop</span>
+            <span class="flow__title-zh">从流程到增长的闭环</span>
+          </div>
+
+          <div class="flow__steps">
+            <div class="flow__step">
+              <div class="flow__icon flow__icon--a">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 4v14"/></svg>
+              </div>
+              <div>
+                <p class="flow__label">Process</p>
+                <p class="flow__desc">梳理现有流程</p>
+              </div>
+            </div>
+
+            <div class="flow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+
+            <div class="flow__step">
+              <div class="flow__icon flow__icon--b">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M6.3 17.7l2.1-2.1M15.6 8.4l2.1-2.1"/></svg>
+              </div>
+              <div>
+                <p class="flow__label">AI Analysis</p>
+                <p class="flow__desc">瓶颈与机会识别</p>
+              </div>
+            </div>
+
+            <div class="flow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+
+            <div class="flow__step">
+              <div class="flow__icon flow__icon--c">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+              </div>
+              <div>
+                <p class="flow__label">Automation</p>
+                <p class="flow__desc">AI 系统落地</p>
+              </div>
+            </div>
+
+            <div class="flow__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </div>
+
+            <div class="flow__step">
+              <div class="flow__icon flow__icon--d">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 7l-8.5 8.5L9 11l-7 7"/><path d="M16 7h6v6"/></svg>
+              </div>
+              <div>
+                <p class="flow__label">Growth</p>
+                <p class="flow__desc">持续优化与增长</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow__result">
+            <div>
+              <p class="flow__result-label">平均效率提升</p>
+              <p class="flow__result-sub">实施后 3 个月内可见</p>
+            </div>
+            <strong class="flow__result-num">60%+</strong>
+          </div>
+        </div>
+
+        <div class="float-card float-card--tl">
+          <span class="float-card__icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </span>
+          <div>
+            <p class="float-card__num">+40%</p>
+            <p class="float-card__sub">成本节省</p>
+          </div>
+        </div>
+        <div class="float-card float-card--br">
+          <span class="float-card__icon" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <div>
+            <p class="float-card__num">&lt; 8 周</p>
+            <p class="float-card__sub">落地周期</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAIN POINTS ============ -->
+  <section id="pain-points" class="section section--light">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow">中小企业的运营困境</span>
+        <h2>中小企业为什么需要 AI 运营重构？</h2>
+        <p>这些痛点听起来熟悉吗？它们都不是单点问题，而是流程问题。</p>
+      </header>
+
+      <div class="grid grid--4">
+        <article class="card card--pain reveal">
+          <div class="card__icon"><span>👥</span></div>
+          <h3>人工重复工作太多</h3>
+          <p>员工大量时间消耗在复制粘贴、整理表格、回复重复问题上，无法专注高价值任务。</p>
+        </article>
+
+        <article class="card card--pain reveal">
+          <div class="card__icon"><span>⏱️</span></div>
+          <h3>客户跟进不及时</h3>
+          <p>线索分散在微信、表单、邮件里，跟进全靠记忆，错失成交时机，转化率持续走低。</p>
+        </article>
+
+        <article class="card card--pain reveal">
+          <div class="card__icon"><span>📊</span></div>
+          <h3>数据分散，无法决策</h3>
+          <p>客户数据、销售数据、运营数据分散在不同工具，老板想要一个真实的全局视图却拿不出来。</p>
+        </article>
+
+        <article class="card card--pain reveal">
+          <div class="card__icon"><span>🧠</span></div>
+          <h3>运营依赖个人经验</h3>
+          <p>核心流程跑在某几个老员工脑子里，新人难以上手，骨干一离职业务就停摆。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION ============ -->
+  <section id="solution" class="section section--white">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow">我们的方案</span>
+        <h2>不只是 AI 工具，<br/>而是一套可落地的运营升级方案</h2>
+        <p>我们提供的不是"试试看"，而是从诊断到落地、从落地到优化的完整路径。</p>
+      </header>
+
+      <div class="grid grid--4">
+        <article class="module reveal">
+          <span class="module__num">01</span>
+          <h3>运营流程诊断</h3>
+          <p>深度访谈与数据梳理，画出企业真实的端到端流程图，识别冗余环节。</p>
+        </article>
+
+        <article class="module reveal">
+          <span class="module__num">02</span>
+          <h3>AI 机会点识别</h3>
+          <p>从重复性、规则性、数据密度三个维度评估每个环节是否值得 AI 化。</p>
+        </article>
+
+        <article class="module reveal">
+          <span class="module__num">03</span>
+          <h3>自动化方案设计</h3>
+          <p>结合企业现状选择 AI 客服、AI 跟进、AI 内容、Agent 等组合方案，写明 ROI。</p>
+        </article>
+
+        <article class="module reveal">
+          <span class="module__num">04</span>
+          <h3>系统落地与优化</h3>
+          <p>不止"交付一个 demo"，我们陪跑上线、采集数据、持续调优直到指标达成。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHODOLOGY ============ -->
+  <section id="methodology" class="section section--dark">
+    <div class="section__bg" aria-hidden="true"></div>
+    <div class="container">
+      <header class="section__head section__head--invert reveal">
+        <span class="eyebrow eyebrow--invert">AIOP Framework</span>
+        <h2>从流程拆解到 AI 落地的完整路径</h2>
+        <p>五步走，每一步都有明确产出，不会让你"咨询完就结束了"。</p>
+      </header>
+
+      <ol class="steps">
+        <li class="steps__item reveal">
+          <div class="steps__num">1</div>
+          <div class="steps__body">
+            <p class="steps__en">Flow Mapping</p>
+            <h3>流程拆解</h3>
+            <p>把口头描述的"我们怎么干"转成可视化的端到端流程图。</p>
+          </div>
+        </li>
+        <li class="steps__item reveal">
+          <div class="steps__num">2</div>
+          <div class="steps__body">
+            <p class="steps__en">Bottleneck Analysis</p>
+            <h3>瓶颈分析</h3>
+            <p>定位耗时最长、错误最多、最依赖人脑的关键环节。</p>
+          </div>
+        </li>
+        <li class="steps__item reveal">
+          <div class="steps__num">3</div>
+          <div class="steps__body">
+            <p class="steps__en">AI Opportunity Mapping</p>
+            <h3>AI 机会点识别</h3>
+            <p>用矩阵评估每个瓶颈的 AI 化价值与可行性，选出优先级最高的 2–3 个。</p>
+          </div>
+        </li>
+        <li class="steps__item reveal">
+          <div class="steps__num">4</div>
+          <div class="steps__body">
+            <p class="steps__en">System Redesign</p>
+            <h3>流程重构</h3>
+            <p>重新设计 AI 加入后的新流程，明确人机分工与衡量指标。</p>
+          </div>
+        </li>
+        <li class="steps__item reveal">
+          <div class="steps__num">5</div>
+          <div class="steps__body">
+            <p class="steps__en">Implementation</p>
+            <h3>落地实施</h3>
+            <p>选型、搭建、培训、上线、监控——全程陪跑直到达成 ROI 目标。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="section section--white">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow">核心服务</span>
+        <h2>我们的核心服务</h2>
+        <p>三类服务覆盖从"一次性诊断"到"长期托管"的完整需求。</p>
+      </header>
+
+      <div class="grid grid--3">
+        <article class="service reveal">
+          <div class="service__icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+          <h3>AI 运营流程诊断</h3>
+          <p>全面分析企业现有运营流程，找出低效、重复、可自动化的环节，输出诊断报告与优先级路线图。</p>
+          <ul class="service__list">
+            <li>端到端流程图绘制</li>
+            <li>瓶颈与浪费定位</li>
+            <li>AI 机会矩阵</li>
+          </ul>
+        </article>
+
+        <article class="service service--featured reveal">
+          <span class="service__tag">最受欢迎</span>
+          <div class="service__icon" style="background:linear-gradient(135deg,#6366f1,#7c3aed)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>AI 自动化解决方案</h3>
+          <p>根据企业实际业务，设计 AI 客服、AI 销售跟进、AI 内容运营、AI 数据分析等定制化组合方案。</p>
+          <ul class="service__list">
+            <li>AI 客服 / Agent 搭建</li>
+            <li>销售自动化与 CRM 打通</li>
+            <li>内容与数据流水线</li>
+          </ul>
+        </article>
+
+        <article class="service reveal">
+          <div class="service__icon" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>AI 运营托管</h3>
+          <p>持续优化已上线的自动化系统，追踪效果，定期调参与扩展，让 AI 系统越用越强。</p>
+          <ul class="service__list">
+            <li>月度数据复盘</li>
+            <li>模型与提示词调优</li>
+            <li>新场景持续扩展</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ USE CASES ============ -->
+  <section id="use-cases" class="section section--gray">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow">应用场景</span>
+        <h2>适用于各种中小企业的通用运营场景</h2>
+        <p>我们已在以下场景中帮助企业实现可量化的提效与降本。</p>
+      </header>
+
+      <div class="grid grid--3 grid--cases">
+        <div class="case reveal"><span class="case__dot"></span><div><h4>客户咨询自动回复</h4><p>7×24 不间断响应，减少 60% 客服重复问题。</p></div></div>
+        <div class="case reveal"><span class="case__dot"></span><div><h4>销售线索自动跟进</h4><p>分群打标自动触达，转化率提升 25–40%。</p></div></div>
+        <div class="case reveal"><span class="case__dot"></span><div><h4>内容营销自动生成</h4><p>从主题到多平台发布，内容产能 ×5。</p></div></div>
+        <div class="case reveal"><span class="case__dot"></span><div><h4>CRM 客户分层</h4><p>基于行为自动分层，让销售把精力放在最该跟的人上。</p></div></div>
+        <div class="case reveal"><span class="case__dot"></span><div><h4>内部任务自动提醒</h4><p>跨工具任务追踪，逾期与卡点主动告警。</p></div></div>
+        <div class="case reveal"><span class="case__dot"></span><div><h4>运营数据自动分析</h4><p>每周自动产出经营简报，老板抬手就看完。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY US ============ -->
+  <section id="why-us" class="section section--white">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="eyebrow">为什么选择我们</span>
+        <h2>真正能让 AI 在企业里跑起来的伙伴</h2>
+      </header>
+
+      <div class="grid grid--4">
+        <div class="why reveal">
+          <div class="why__icon">🧭</div>
+          <h3>先分析流程，再设计 AI</h3>
+          <p>不为了 AI 而 AI。先把流程问题搞清楚，再决定哪里需要 AI，哪里只需要规范化。</p>
+        </div>
+        <div class="why reveal">
+          <div class="why__icon">🛠️</div>
+          <h3>不做空泛咨询，强调落地</h3>
+          <p>我们不只是写报告。从方案设计到上线运行，全程陪跑直到系统真正在用。</p>
+        </div>
+        <div class="why reveal">
+          <div class="why__icon">📈</div>
+          <h3>聚焦 ROI 与效率提升</h3>
+          <p>每个方案都有可量化指标——节省的人时、提升的转化、缩短的周期。</p>
+        </div>
+        <div class="why reveal">
+          <div class="why__icon">🔁</div>
+          <h3>方案可复制、可持续优化</h3>
+          <p>我们交付的是一套可继承的方法和系统，不是一次性的脚本。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section id="cta" class="cta">
+    <div class="cta__bg" aria-hidden="true"></div>
+    <div class="container cta__inner reveal">
+      <span class="badge badge--invert">
+        <span class="badge__dot badge__dot--white"></span>
+        现在开始，免费咨询
+      </span>
+      <h2>想知道你的企业哪些流程<br/>可以被 AI 重构？</h2>
+      <p>预约一次 AI 运营流程诊断，我们将帮你找出最值得自动化的业务环节，并给出可执行路径。</p>
+
+      <div class="cta__actions">
+        <a class="btn btn--white btn--lg" href="mailto:contact@aiopsflow.com?subject=%E9%A2%84%E7%BA%A6%E5%85%8D%E8%B4%B9%E8%AF%8A%E6%96%AD%20-%20AI%20OpsFlow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          预约免费诊断
+        </a>
+        <a class="btn btn--outline-light btn--lg" href="mailto:contact@aiopsflow.com">
+          直接发邮件咨询
+        </a>
+      </div>
+
+      <ul class="cta__trust">
+        <li>✓ 完全免费</li>
+        <li>✓ 1 个工作日内回复</li>
+        <li>✓ 不强制销售</li>
+        <li>✓ 信息严格保密</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="nav__brand">
+          <span class="nav__logo" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#logoGrad2)"/>
+              <path d="M10 21V11l6 6 6-6v10" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logoGrad2" x1="2" y1="2" x2="30" y2="30">
+                  <stop stop-color="#3B82F6"/>
+                  <stop offset="1" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="nav__name">
+            <strong>AI OpsFlow</strong>
+            <small>Rebuild Your Operations with AI</small>
+          </span>
+        </a>
+        <p class="footer__desc">
+          帮助中小企业分析运营流程，落地 AI 自动化解决方案，实现降本、提效与增长。
+        </p>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h4>导航</h4>
+          <ul>
+            <li><a href="#solution">解决方案</a></li>
+            <li><a href="#methodology">方法论</a></li>
+            <li><a href="#services">服务</a></li>
+            <li><a href="#use-cases">应用场景</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>联系我们</h4>
+          <ul>
+            <li><a href="mailto:contact@aiopsflow.com">contact@aiopsflow.com</a></li>
+            <li><a href="#cta">预约免费诊断</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <span>&copy; <span id="year">2026</span> AI OpsFlow. 保留所有权利。</span>
+        <span>Analyze · Optimize · Automate</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
