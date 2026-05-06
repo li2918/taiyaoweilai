@@ -3,52 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI OpsFlow | AI运营流程重构解决方案</title>
-  <meta name="description" content="AI OpsFlow 帮助中小企业分析运营流程、识别效率瓶颈，并落地 AI 自动化解决方案，实现降本、提效与增长。" />
+  <title>AI OpsFlow | AI 运营流程重构解决方案</title>
+  <meta id="metaDesc" name="description" content="AI OpsFlow 帮助中小企业分析运营流程、识别效率瓶颈，并落地 AI 自动化解决方案，实现降本、提效与增长。" />
   <meta name="keywords" content="AI OpsFlow,AI运营,流程自动化,AI Agent,中小企业AI,运营优化,流程重构" />
   <meta name="author" content="AI OpsFlow" />
-  <meta property="og:title" content="AI OpsFlow | AI运营流程重构解决方案" />
+  <meta property="og:title" content="AI OpsFlow | AI 运营流程重构解决方案" />
   <meta property="og:description" content="用 AI 重构你的运营流程。我们帮助中小企业找出流程瓶颈，落地 AI 自动化方案。" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0A1628" />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..800,0..100&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!-- ============ NAVBAR ============ -->
+<body class="lang-zh">
+
+  <!-- Scroll progress bar -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#hero" class="nav__brand" aria-label="AI OpsFlow 首页">
-        <span class="nav__logo" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#logoGrad)"/>
-            <path d="M10 21V11l6 6 6-6v10" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="logoGrad" x1="2" y1="2" x2="30" y2="30">
-                <stop stop-color="#3B82F6"/>
-                <stop offset="1" stop-color="#7C3AED"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
-        <span class="nav__name">
-          <strong>AI OpsFlow</strong>
-          <small>用 AI 重构你的运营流程</small>
-        </span>
+      <a href="#hero" class="nav__brand" aria-label="AI OpsFlow">
+        <span class="nav__mark" aria-hidden="true"></span>
+        <span class="nav__wordmark">AI <em>OpsFlow</em></span>
       </a>
 
-      <nav class="nav__links" id="navLinks" aria-label="主导航">
-        <a href="#pain-points">痛点</a>
-        <a href="#solution">解决方案</a>
-        <a href="#methodology">方法论</a>
-        <a href="#services">服务</a>
-        <a href="#use-cases">应用场景</a>
-        <a href="#why-us">为何选择</a>
+      <nav class="nav__links" id="navLinks" aria-label="primary">
+        <a href="#approach" data-num="01"><span class="zh">路径</span><span class="en">Approach</span></a>
+        <a href="#methodology" data-num="02"><span class="zh">方法</span><span class="en">Method</span></a>
+        <a href="#services" data-num="03"><span class="zh">服务</span><span class="en">Services</span></a>
+        <a href="#cases" data-num="04"><span class="zh">场景</span><span class="en">Use cases</span></a>
+        <a href="#work" data-num="05"><span class="zh">实绩</span><span class="en">Work</span></a>
+        <a href="#manifesto" data-num="06"><span class="zh">主张</span><span class="en">Manifesto</span></a>
       </nav>
 
-      <a href="#cta" class="btn btn--primary nav__cta">预约免费诊断</a>
+      <div class="nav__right">
+        <div class="lang-toggle" id="langToggle" role="group" aria-label="语言切换 Language">
+          <button type="button" data-lang="zh" aria-label="切换到中文">中</button>
+          <span class="lang-toggle__sep">/</span>
+          <button type="button" data-lang="en" aria-label="Switch to English">EN</button>
+        </div>
 
-      <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
-        <span></span><span></span><span></span>
+        <a href="#cta" class="nav__cta">
+          <span><span class="zh">预约咨询</span><span class="en">Book a diagnostic</span></span>
+          <span class="nav__cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="打开菜单 Open menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
   </header>
@@ -56,260 +62,349 @@
   <!-- ============ HERO ============ -->
   <section id="hero" class="hero">
     <div class="hero__bg" aria-hidden="true">
-      <div class="hero__glow hero__glow--a"></div>
-      <div class="hero__glow hero__glow--b"></div>
-      <div class="hero__grid"></div>
+      <div class="hero__contour"></div>
+      <div class="hero__noise"></div>
     </div>
 
     <div class="container hero__inner">
-      <div class="hero__content reveal">
-        <span class="badge">
-          <span class="badge__dot"></span>
-          AI 驱动的运营变革专家
+      <div class="hero__masthead reveal">
+        <span class="meta meta--mono">
+          <span class="meta__dot"></span>
+          AI OPSFLOW &nbsp;/&nbsp;
+          <span class="zh">咨询 · 策略 · 实施</span>
+          <span class="en">ADVISORY · STRATEGY · IMPLEMENTATION</span>
         </span>
+      </div>
 
-        <h1 class="hero__title">
-          用 <span class="text-gradient">AI</span> 重构<br/>
-          你的运营流程
-        </h1>
-        <p class="hero__subtitle">
-          我们帮助中小企业梳理运营流程、识别效率瓶颈，并落地 AI 自动化方案，让企业少用人、少出错、跑得更快。
+      <div class="hero__main">
+        <div class="hero__lead">
+          <h1 class="hero__title reveal">
+            <span class="zh">用 <em>AI</em><br/>重构你的<br/>运营流程</span>
+            <span class="en">Rebuild your<br/>operations<br/><em>with AI.</em></span>
+          </h1>
+
+          <div class="hero__divider reveal" aria-hidden="true"></div>
+
+          <p class="hero__lede reveal zh">
+            我们帮助中小企业梳理运营流程、识别效率瓶颈，并落地 AI 自动化方案——让企业少用人、少出错、跑得更快。
+          </p>
+          <p class="hero__lede reveal en">
+            We help mid-market companies map their operations, find what's worth automating, and deploy AI systems that actually run — fewer mistakes, fewer hires, faster cycles.
+          </p>
+
+          <p class="hero__lede-sub reveal zh">
+            我们梳理流程，找出值得自动化的环节，然后亲手把它建起来——直到它真正产生价值。
+          </p>
+          <p class="hero__lede-sub reveal en">
+            We map your processes. We find what's worth automating. Then we build it &mdash; and stay until it earns its keep.
+          </p>
+
+          <div class="hero__actions reveal">
+            <a class="btn btn--solid" href="#cta">
+              <span><span class="zh">预约免费诊断</span><span class="en">Book a free diagnostic</span></span>
+              <span class="btn__arrow">→</span>
+            </a>
+            <a class="link link--arrow" href="#approach">
+              <span class="zh">查看解决方案</span><span class="en">See our approach</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right column: AIOP Live Diagnostic panel -->
+        <aside class="hero__panel reveal" aria-label="AIOP Framework Live Diagnostic">
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__label">AIOP <span class="panel__sep">/</span> Live Diagnostic</span>
+              <span class="panel__pulse">
+                <span class="panel__pulse-dot"></span>
+                LIVE
+              </span>
+            </div>
+
+            <div class="panel__body">
+              <div class="bar" data-bar="100">
+                <div class="bar__top">
+                  <span class="bar__id">01</span>
+                  <span class="bar__name">Process Mapping</span>
+                  <span class="bar__val" data-target="100">0%</span>
+                </div>
+                <div class="bar__track"><div class="bar__fill" style="--w:100%"></div></div>
+              </div>
+              <div class="bar" data-bar="87">
+                <div class="bar__top">
+                  <span class="bar__id">02</span>
+                  <span class="bar__name">Bottleneck Analysis</span>
+                  <span class="bar__val" data-target="87">0%</span>
+                </div>
+                <div class="bar__track"><div class="bar__fill" style="--w:87%"></div></div>
+              </div>
+              <div class="bar" data-bar="73">
+                <div class="bar__top">
+                  <span class="bar__id">03</span>
+                  <span class="bar__name">AI Opportunity</span>
+                  <span class="bar__val" data-target="73">0%</span>
+                </div>
+                <div class="bar__track"><div class="bar__fill" style="--w:73%"></div></div>
+              </div>
+              <div class="bar" data-bar="54">
+                <div class="bar__top">
+                  <span class="bar__id">04</span>
+                  <span class="bar__name">System Redesign</span>
+                  <span class="bar__val" data-target="54">0%</span>
+                </div>
+                <div class="bar__track"><div class="bar__fill" style="--w:54%"></div></div>
+              </div>
+              <div class="bar" data-bar="28">
+                <div class="bar__top">
+                  <span class="bar__id">05</span>
+                  <span class="bar__name">Implementation</span>
+                  <span class="bar__val" data-target="28">0%</span>
+                </div>
+                <div class="bar__track"><div class="bar__fill" style="--w:28%"></div></div>
+              </div>
+            </div>
+
+            <div class="panel__foot">
+              <div>
+                <span class="panel__foot-num">6.3<span class="panel__foot-unit">w</span></span>
+                <span class="panel__foot-label">avg lead time</span>
+              </div>
+              <div>
+                <span class="panel__foot-num">+60<span class="panel__foot-unit">%</span></span>
+                <span class="panel__foot-label">efficiency gain</span>
+              </div>
+              <div>
+                <span class="panel__foot-num">−40<span class="panel__foot-unit">%</span></span>
+                <span class="panel__foot-label">cost saved</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero__bottom reveal">
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num">50<sup>+</sup></span>
+            <span class="stat__label">
+              <span class="zh">企业服务</span><span class="en">Mid-market clients</span>
+            </span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">8<span class="stat__unit">w</span></span>
+            <span class="stat__label">
+              <span class="zh">平均落地周期</span><span class="en">To production</span>
+            </span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">98<span class="stat__unit">%</span></span>
+            <span class="stat__label">
+              <span class="zh">客户持续合作率</span><span class="en">Client retention</span>
+            </span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">1<span class="stat__unit">d</span></span>
+            <span class="stat__label">
+              <span class="zh">响应承诺</span><span class="en">Response time</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APPROACH ============ -->
+  <section id="approach" class="section">
+    <div class="container">
+      <header class="head reveal">
+        <span class="eyebrow">01 &mdash; <span class="zh">前提</span><span class="en">The Premise</span></span>
+        <h2 class="head__title">
+          <span class="zh">真正的瓶颈很少在技术，<br/>而在 <em>流程本身。</em></span>
+          <span class="en">The bottleneck is rarely<br/>the technology. It's <em>the process.</em></span>
+        </h2>
+      </header>
+
+      <ol class="argues">
+        <li class="argue reveal">
+          <span class="argue__num">01</span>
+          <div class="argue__body">
+            <h3>
+              <span class="zh">人工重复工作太多</span>
+              <span class="en">Too much repetitive labour</span>
+            </h3>
+            <p class="zh">员工大量时间消耗在复制粘贴、整理表格、回复重复问题上。这些工作不是"应该用 AI"——而是<strong>本来就不该由人来做</strong>。</p>
+            <p class="en">Your team burns hours on copy-paste, spreadsheet wrangling, and re-answering FAQs. The question isn't "should we use AI here" — it's <strong>why was a human ever doing this</strong>.</p>
+          </div>
+          <span class="argue__tag">Repetitive Toil</span>
+        </li>
+
+        <li class="argue reveal">
+          <span class="argue__num">02</span>
+          <div class="argue__body">
+            <h3>
+              <span class="zh">客户跟进不及时</span>
+              <span class="en">Conversion windows missed</span>
+            </h3>
+            <p class="zh">线索分散在微信、表单、邮件里，跟进全靠记忆。<strong>转化窗口在 24 小时内</strong>，而你的销售用 48 小时才回复。</p>
+            <p class="en">Leads scatter across WeChat, web forms, and inboxes. Sales rely on memory. <strong>The conversion window closes in 24 hours</strong> — your team replies in 48.</p>
+          </div>
+          <span class="argue__tag">Lost Conversion</span>
+        </li>
+
+        <li class="argue reveal">
+          <span class="argue__num">03</span>
+          <div class="argue__body">
+            <h3>
+              <span class="zh">数据分散，无法决策</span>
+              <span class="en">Data scattered, decisions delayed</span>
+            </h3>
+            <p class="zh">客户、销售、运营数据散落在 6 个工具里。<strong>老板想要一个真实的全局视图</strong>——拿不出来。</p>
+            <p class="en">Customer, sales, and operations data live across six different tools. <strong>Leadership wants a single, truthful dashboard</strong> — and can't get one.</p>
+          </div>
+          <span class="argue__tag">Decision Latency</span>
+        </li>
+
+        <li class="argue reveal">
+          <span class="argue__num">04</span>
+          <div class="argue__body">
+            <h3>
+              <span class="zh">运营依赖个人经验</span>
+              <span class="en">Operations live in people's heads</span>
+            </h3>
+            <p class="zh">核心流程跑在某几个老员工脑子里。新人难以上手，<strong>骨干一离职业务就停摆</strong>——这不是人的问题，是流程的问题。</p>
+            <p class="en">Critical processes live in the heads of a few veterans. New hires can't ramp. When a key person leaves, the business stalls — <strong>that's a process problem, not a people problem</strong>.</p>
+          </div>
+          <span class="argue__tag">Tribal Knowledge</span>
+        </li>
+      </ol>
+
+      <div class="thesis reveal">
+        <p class="thesis__quote zh">
+          "我们提供的不是 AI 工具，而是<em>一整套能让 AI 在你公司真正跑起来的运营升级方案</em>——从诊断、设计到落地、优化。"
         </p>
-        <p class="hero__sub-en">Rebuild Your Operations with AI</p>
-
-        <div class="hero__actions">
-          <a href="#cta" class="btn btn--primary btn--lg">
-            预约免费诊断
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#solution" class="btn btn--ghost btn--lg">查看解决方案</a>
-        </div>
-
-        <ul class="hero__trust">
-          <li><span class="check">✓</span> 1 个工作日响应</li>
-          <li><span class="check">✓</span> 免费初步诊断</li>
-          <li><span class="check">✓</span> 可量化效果</li>
-        </ul>
-      </div>
-
-      <!-- Flow diagram -->
-      <div class="hero__visual reveal">
-        <div class="flow">
-          <div class="flow__title">
-            <span class="flow__title-en">AI Operations Loop</span>
-            <span class="flow__title-zh">从流程到增长的闭环</span>
-          </div>
-
-          <div class="flow__steps">
-            <div class="flow__step">
-              <div class="flow__icon flow__icon--a">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/><path d="M8 4v14"/></svg>
-              </div>
-              <div>
-                <p class="flow__label">Process</p>
-                <p class="flow__desc">梳理现有流程</p>
-              </div>
-            </div>
-
-            <div class="flow__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-
-            <div class="flow__step">
-              <div class="flow__icon flow__icon--b">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M6.3 17.7l2.1-2.1M15.6 8.4l2.1-2.1"/></svg>
-              </div>
-              <div>
-                <p class="flow__label">AI Analysis</p>
-                <p class="flow__desc">瓶颈与机会识别</p>
-              </div>
-            </div>
-
-            <div class="flow__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-
-            <div class="flow__step">
-              <div class="flow__icon flow__icon--c">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-              </div>
-              <div>
-                <p class="flow__label">Automation</p>
-                <p class="flow__desc">AI 系统落地</p>
-              </div>
-            </div>
-
-            <div class="flow__arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-
-            <div class="flow__step">
-              <div class="flow__icon flow__icon--d">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 7l-8.5 8.5L9 11l-7 7"/><path d="M16 7h6v6"/></svg>
-              </div>
-              <div>
-                <p class="flow__label">Growth</p>
-                <p class="flow__desc">持续优化与增长</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flow__result">
-            <div>
-              <p class="flow__result-label">平均效率提升</p>
-              <p class="flow__result-sub">实施后 3 个月内可见</p>
-            </div>
-            <strong class="flow__result-num">60%+</strong>
-          </div>
-        </div>
-
-        <div class="float-card float-card--tl">
-          <span class="float-card__icon" style="background:linear-gradient(135deg,#10b981,#059669)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          </span>
-          <div>
-            <p class="float-card__num">+40%</p>
-            <p class="float-card__sub">成本节省</p>
-          </div>
-        </div>
-        <div class="float-card float-card--br">
-          <span class="float-card__icon" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </span>
-          <div>
-            <p class="float-card__num">&lt; 8 周</p>
-            <p class="float-card__sub">落地周期</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PAIN POINTS ============ -->
-  <section id="pain-points" class="section section--light">
-    <div class="container">
-      <header class="section__head reveal">
-        <span class="eyebrow">中小企业的运营困境</span>
-        <h2>中小企业为什么需要 AI 运营重构？</h2>
-        <p>这些痛点听起来熟悉吗？它们都不是单点问题，而是流程问题。</p>
-      </header>
-
-      <div class="grid grid--4">
-        <article class="card card--pain reveal">
-          <div class="card__icon"><span>👥</span></div>
-          <h3>人工重复工作太多</h3>
-          <p>员工大量时间消耗在复制粘贴、整理表格、回复重复问题上，无法专注高价值任务。</p>
-        </article>
-
-        <article class="card card--pain reveal">
-          <div class="card__icon"><span>⏱️</span></div>
-          <h3>客户跟进不及时</h3>
-          <p>线索分散在微信、表单、邮件里，跟进全靠记忆，错失成交时机，转化率持续走低。</p>
-        </article>
-
-        <article class="card card--pain reveal">
-          <div class="card__icon"><span>📊</span></div>
-          <h3>数据分散，无法决策</h3>
-          <p>客户数据、销售数据、运营数据分散在不同工具，老板想要一个真实的全局视图却拿不出来。</p>
-        </article>
-
-        <article class="card card--pain reveal">
-          <div class="card__icon"><span>🧠</span></div>
-          <h3>运营依赖个人经验</h3>
-          <p>核心流程跑在某几个老员工脑子里，新人难以上手，骨干一离职业务就停摆。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SOLUTION ============ -->
-  <section id="solution" class="section section--white">
-    <div class="container">
-      <header class="section__head reveal">
-        <span class="eyebrow">我们的方案</span>
-        <h2>不只是 AI 工具，<br/>而是一套可落地的运营升级方案</h2>
-        <p>我们提供的不是"试试看"，而是从诊断到落地、从落地到优化的完整路径。</p>
-      </header>
-
-      <div class="grid grid--4">
-        <article class="module reveal">
-          <span class="module__num">01</span>
-          <h3>运营流程诊断</h3>
-          <p>深度访谈与数据梳理，画出企业真实的端到端流程图，识别冗余环节。</p>
-        </article>
-
-        <article class="module reveal">
-          <span class="module__num">02</span>
-          <h3>AI 机会点识别</h3>
-          <p>从重复性、规则性、数据密度三个维度评估每个环节是否值得 AI 化。</p>
-        </article>
-
-        <article class="module reveal">
-          <span class="module__num">03</span>
-          <h3>自动化方案设计</h3>
-          <p>结合企业现状选择 AI 客服、AI 跟进、AI 内容、Agent 等组合方案，写明 ROI。</p>
-        </article>
-
-        <article class="module reveal">
-          <span class="module__num">04</span>
-          <h3>系统落地与优化</h3>
-          <p>不止"交付一个 demo"，我们陪跑上线、采集数据、持续调优直到指标达成。</p>
-        </article>
+        <p class="thesis__quote en">
+          "We don't sell you AI tools. We deliver <em>an operational upgrade that makes AI actually work inside your company</em> — from diagnosis and design through deployment and optimization."
+        </p>
+        <p class="thesis__by">
+          <span class="rule"></span>
+          <span>The AI OpsFlow Thesis</span>
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ============ METHODOLOGY ============ -->
-  <section id="methodology" class="section section--dark">
-    <div class="section__bg" aria-hidden="true"></div>
+  <section id="methodology" class="section section--ink">
     <div class="container">
-      <header class="section__head section__head--invert reveal">
-        <span class="eyebrow eyebrow--invert">AIOP Framework</span>
-        <h2>从流程拆解到 AI 落地的完整路径</h2>
-        <p>五步走，每一步都有明确产出，不会让你"咨询完就结束了"。</p>
+      <header class="head head--invert reveal">
+        <span class="eyebrow eyebrow--invert">02 &mdash; AIOP Framework</span>
+        <h2 class="head__title">
+          <span class="zh">从流程到自治运营，<br/>五个阶段的<em>完整路径。</em></span>
+          <span class="en">A five-stage path from<br/>process to <em>autonomous ops.</em></span>
+        </h2>
+        <p class="head__desc zh">每一阶段都交付可见的产出物，不是"咨询完就结束了"。</p>
+        <p class="head__desc en">Every stage ships a concrete artifact. The report is never the deliverable.</p>
       </header>
 
-      <ol class="steps">
-        <li class="steps__item reveal">
-          <div class="steps__num">1</div>
-          <div class="steps__body">
-            <p class="steps__en">Flow Mapping</p>
-            <h3>流程拆解</h3>
-            <p>把口头描述的"我们怎么干"转成可视化的端到端流程图。</p>
+      <ol class="timeline">
+        <li class="tl reveal">
+          <div class="tl__index">
+            <span class="tl__num">01</span>
+            <span class="tl__line" aria-hidden="true"></span>
+          </div>
+          <div class="tl__body">
+            <span class="tl__en">Flow Mapping</span>
+            <h3>
+              <span class="zh">流程拆解</span>
+              <span class="en">Visualize how the work actually moves.</span>
+            </h3>
+            <p class="zh">把口头描述的"我们怎么干"转成端到端、可视化的流程图。每个环节都标明输入、输出、责任人、耗时。</p>
+            <p class="en">Translate "this is how we do it" into an end-to-end process diagram. Every step labelled with inputs, outputs, owners, and elapsed time.</p>
+            <ul class="tl__deliverables">
+              <li>End-to-end process diagram</li>
+              <li>RACI &amp; latency matrix</li>
+            </ul>
           </div>
         </li>
-        <li class="steps__item reveal">
-          <div class="steps__num">2</div>
-          <div class="steps__body">
-            <p class="steps__en">Bottleneck Analysis</p>
-            <h3>瓶颈分析</h3>
-            <p>定位耗时最长、错误最多、最依赖人脑的关键环节。</p>
+
+        <li class="tl reveal">
+          <div class="tl__index">
+            <span class="tl__num">02</span>
+            <span class="tl__line" aria-hidden="true"></span>
+          </div>
+          <div class="tl__body">
+            <span class="tl__en">Bottleneck Analysis</span>
+            <h3>
+              <span class="zh">瓶颈分析</span>
+              <span class="en">Find what's slow. Find what's broken.</span>
+            </h3>
+            <p class="zh">定位耗时最长、错误最多、最依赖人脑的关键环节。用数据证明，不靠直觉判断。</p>
+            <p class="en">Identify the slowest, error-prone, most-human-dependent steps. Backed by data, not gut feel.</p>
+            <ul class="tl__deliverables">
+              <li>Critical-path bottleneck report</li>
+              <li>Cost-of-delay quantification</li>
+            </ul>
           </div>
         </li>
-        <li class="steps__item reveal">
-          <div class="steps__num">3</div>
-          <div class="steps__body">
-            <p class="steps__en">AI Opportunity Mapping</p>
-            <h3>AI 机会点识别</h3>
-            <p>用矩阵评估每个瓶颈的 AI 化价值与可行性，选出优先级最高的 2–3 个。</p>
+
+        <li class="tl reveal">
+          <div class="tl__index">
+            <span class="tl__num">03</span>
+            <span class="tl__line" aria-hidden="true"></span>
+          </div>
+          <div class="tl__body">
+            <span class="tl__en">AI Opportunity Mapping</span>
+            <h3>
+              <span class="zh">AI 机会点识别</span>
+              <span class="en">Score every gap by value &times; feasibility.</span>
+            </h3>
+            <p class="zh">用「价值 × 可行性」矩阵评估每个瓶颈的 AI 化空间，圈出优先级最高的 2–3 个突破口。</p>
+            <p class="en">Plot every bottleneck on a value-vs-feasibility matrix. Pick the 2–3 highest-leverage interventions to pursue first.</p>
+            <ul class="tl__deliverables">
+              <li>Opportunity prioritization matrix</li>
+              <li>ROI projection per intervention</li>
+            </ul>
           </div>
         </li>
-        <li class="steps__item reveal">
-          <div class="steps__num">4</div>
-          <div class="steps__body">
-            <p class="steps__en">System Redesign</p>
-            <h3>流程重构</h3>
-            <p>重新设计 AI 加入后的新流程，明确人机分工与衡量指标。</p>
+
+        <li class="tl reveal">
+          <div class="tl__index">
+            <span class="tl__num">04</span>
+            <span class="tl__line" aria-hidden="true"></span>
+          </div>
+          <div class="tl__body">
+            <span class="tl__en">System Redesign</span>
+            <h3>
+              <span class="zh">流程重构</span>
+              <span class="en">Rebuild the process around AI &amp; humans.</span>
+            </h3>
+            <p class="zh">重新设计 AI 加入后的流程图，明确人机分工、衡量指标、回滚方案。</p>
+            <p class="en">Design the to-be process. Specify human-in-the-loop boundaries, success metrics, and rollback plans.</p>
+            <ul class="tl__deliverables">
+              <li>To-be process blueprint</li>
+              <li>Human-in-the-loop design</li>
+            </ul>
           </div>
         </li>
-        <li class="steps__item reveal">
-          <div class="steps__num">5</div>
-          <div class="steps__body">
-            <p class="steps__en">Implementation</p>
-            <h3>落地实施</h3>
-            <p>选型、搭建、培训、上线、监控——全程陪跑直到达成 ROI 目标。</p>
+
+        <li class="tl reveal">
+          <div class="tl__index">
+            <span class="tl__num">05</span>
+            <span class="tl__line tl__line--last" aria-hidden="true"></span>
+          </div>
+          <div class="tl__body">
+            <span class="tl__en">Implementation</span>
+            <h3>
+              <span class="zh">落地实施</span>
+              <span class="en">Ship to production. Stay until it works.</span>
+            </h3>
+            <p class="zh">选型、搭建、培训、上线、监控。我们陪跑直到指标真正达成——不是 demo 通过验收就走人。</p>
+            <p class="en">Selection, build, training, launch, monitoring. We stay until the KPI is hit — not just until the demo is signed off.</p>
+            <ul class="tl__deliverables">
+              <li>Production rollout &amp; training</li>
+              <li>30 / 60 / 90-day KPI tracking</li>
+            </ul>
           </div>
         </li>
       </ol>
@@ -317,192 +412,537 @@
   </section>
 
   <!-- ============ SERVICES ============ -->
-  <section id="services" class="section section--white">
+  <section id="services" class="section section--paper">
     <div class="container">
-      <header class="section__head reveal">
-        <span class="eyebrow">核心服务</span>
-        <h2>我们的核心服务</h2>
-        <p>三类服务覆盖从"一次性诊断"到"长期托管"的完整需求。</p>
+      <header class="head reveal">
+        <span class="eyebrow">03 &mdash; <span class="zh">合作模式</span><span class="en">Engagements</span></span>
+        <h2 class="head__title">
+          <span class="zh">三种<em>合作方式。</em></span>
+          <span class="en">Three ways to<br/><em>work with us.</em></span>
+        </h2>
       </header>
 
-      <div class="grid grid--3">
-        <article class="service reveal">
-          <div class="service__icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          </div>
-          <h3>AI 运营流程诊断</h3>
-          <p>全面分析企业现有运营流程，找出低效、重复、可自动化的环节，输出诊断报告与优先级路线图。</p>
-          <ul class="service__list">
-            <li>端到端流程图绘制</li>
-            <li>瓶颈与浪费定位</li>
-            <li>AI 机会矩阵</li>
+      <div class="services">
+        <article class="svc reveal">
+          <header class="svc__head">
+            <span class="svc__id">SVC.01</span>
+            <span class="svc__price">2–4 weeks</span>
+          </header>
+          <h3 class="svc__title">
+            <span class="zh">AI 运营流程<br/>诊断</span>
+            <span class="en">Operations<br/>Diagnostic</span>
+          </h3>
+          <p class="svc__lede zh">
+            一次完整的运营流程审计。我们走访关键岗位、画出真实的端到端流程，识别低效、重复、可自动化的环节，输出诊断报告与优先级路线图。
+          </p>
+          <p class="svc__lede en">
+            A full operational audit. We interview key roles, map the real end-to-end flow, identify what's wasteful, repetitive, and automatable, and deliver a prioritized roadmap.
+          </p>
+          <ul class="svc__list">
+            <li><span class="zh">端到端流程审计</span><span class="en">End-to-end process audit</span></li>
+            <li><span class="zh">瓶颈量化分析</span><span class="en">Bottleneck quantification</span></li>
+            <li><span class="zh">AI 机会矩阵</span><span class="en">AI opportunity matrix</span></li>
+            <li><span class="zh">优先级路线图</span><span class="en">Prioritized roadmap</span></li>
           </ul>
+          <a class="link link--arrow" href="#cta">
+            <span class="zh">开始诊断</span><span class="en">Start a diagnostic</span>
+            <span>→</span>
+          </a>
         </article>
 
-        <article class="service service--featured reveal">
-          <span class="service__tag">最受欢迎</span>
-          <div class="service__icon" style="background:linear-gradient(135deg,#6366f1,#7c3aed)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>AI 自动化解决方案</h3>
-          <p>根据企业实际业务，设计 AI 客服、AI 销售跟进、AI 内容运营、AI 数据分析等定制化组合方案。</p>
-          <ul class="service__list">
-            <li>AI 客服 / Agent 搭建</li>
-            <li>销售自动化与 CRM 打通</li>
-            <li>内容与数据流水线</li>
+        <article class="svc svc--featured reveal">
+          <span class="svc__tag"><span class="zh">最受欢迎</span><span class="en">Most engaged</span></span>
+          <header class="svc__head">
+            <span class="svc__id">SVC.02</span>
+            <span class="svc__price">8–16 weeks</span>
+          </header>
+          <h3 class="svc__title">
+            <span class="zh">AI 自动化<br/>解决方案</span>
+            <span class="en">AI Automation<br/>Build</span>
+          </h3>
+          <p class="svc__lede zh">
+            从诊断报告中选定 2–3 个高 ROI 突破口，定制设计并交付端到端的 AI 系统：客服、销售跟进、内容流水线、数据分析、Agent 集成。
+          </p>
+          <p class="svc__lede en">
+            From the diagnostic, we pick 2–3 high-ROI interventions and design, build, and ship end-to-end AI systems: customer service, sales follow-up, content pipelines, analytics, multi-agent setups.
+          </p>
+          <ul class="svc__list">
+            <li><span class="zh">AI 客服 / Agent</span><span class="en">AI customer-service agents</span></li>
+            <li><span class="zh">销售自动化与 CRM 打通</span><span class="en">Sales automation &amp; CRM sync</span></li>
+            <li><span class="zh">内容与数据流水线</span><span class="en">Content &amp; data pipelines</span></li>
+            <li><span class="zh">定制多 Agent 系统</span><span class="en">Custom multi-agent systems</span></li>
           </ul>
+          <a class="link link--arrow" href="#cta">
+            <span class="zh">讨论方案</span><span class="en">Discuss a build</span>
+            <span>→</span>
+          </a>
         </article>
 
-        <article class="service reveal">
-          <div class="service__icon" style="background:linear-gradient(135deg,#0ea5e9,#06b6d4)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 2"/></svg>
-          </div>
-          <h3>AI 运营托管</h3>
-          <p>持续优化已上线的自动化系统，追踪效果，定期调参与扩展，让 AI 系统越用越强。</p>
-          <ul class="service__list">
-            <li>月度数据复盘</li>
-            <li>模型与提示词调优</li>
-            <li>新场景持续扩展</li>
+        <article class="svc reveal">
+          <header class="svc__head">
+            <span class="svc__id">SVC.03</span>
+            <span class="svc__price">Ongoing</span>
+          </header>
+          <h3 class="svc__title">
+            <span class="zh">AI 运营<br/>托管</span>
+            <span class="en">AI Ops<br/>Retainer</span>
+          </h3>
+          <p class="svc__lede zh">
+            持续优化已上线的自动化系统。月度数据复盘、模型与 prompt 调优、新场景持续扩展——让你的 AI 系统越用越强，而不是越用越僵。
+          </p>
+          <p class="svc__lede en">
+            Continuous optimization of live automation. Monthly performance reviews, model and prompt tuning, expansion to new use cases — your AI gets sharper over time, not stale.
+          </p>
+          <ul class="svc__list">
+            <li><span class="zh">月度效果复盘</span><span class="en">Monthly performance review</span></li>
+            <li><span class="zh">提示词与模型调优</span><span class="en">Prompt &amp; model tuning</span></li>
+            <li><span class="zh">新场景扩展</span><span class="en">New use-case expansion</span></li>
+            <li><span class="zh">季度战略同步</span><span class="en">Quarterly strategy sync</span></li>
           </ul>
+          <a class="link link--arrow" href="#cta">
+            <span class="zh">了解托管</span><span class="en">Engage retainer</span>
+            <span>→</span>
+          </a>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ============ USE CASES ============ -->
-  <section id="use-cases" class="section section--gray">
+  <section id="cases" class="section">
     <div class="container">
-      <header class="section__head reveal">
-        <span class="eyebrow">应用场景</span>
-        <h2>适用于各种中小企业的通用运营场景</h2>
-        <p>我们已在以下场景中帮助企业实现可量化的提效与降本。</p>
+      <header class="head reveal">
+        <span class="eyebrow">04 &mdash; <span class="zh">应用场景</span><span class="en">Use cases</span></span>
+        <h2 class="head__title">
+          <span class="zh">AI 已在这里<em>真正赚回成本。</em></span>
+          <span class="en">Where AI earns<br/>its keep <em>today.</em></span>
+        </h2>
+        <p class="head__desc zh">以下场景中我们已帮助企业实现可量化的提效与降本，每一个都有真实数据支持。</p>
+        <p class="head__desc en">In each of these scenarios we've delivered measurable efficiency and cost gains — every one backed by client data.</p>
       </header>
 
-      <div class="grid grid--3 grid--cases">
-        <div class="case reveal"><span class="case__dot"></span><div><h4>客户咨询自动回复</h4><p>7×24 不间断响应，减少 60% 客服重复问题。</p></div></div>
-        <div class="case reveal"><span class="case__dot"></span><div><h4>销售线索自动跟进</h4><p>分群打标自动触达，转化率提升 25–40%。</p></div></div>
-        <div class="case reveal"><span class="case__dot"></span><div><h4>内容营销自动生成</h4><p>从主题到多平台发布，内容产能 ×5。</p></div></div>
-        <div class="case reveal"><span class="case__dot"></span><div><h4>CRM 客户分层</h4><p>基于行为自动分层，让销售把精力放在最该跟的人上。</p></div></div>
-        <div class="case reveal"><span class="case__dot"></span><div><h4>内部任务自动提醒</h4><p>跨工具任务追踪，逾期与卡点主动告警。</p></div></div>
-        <div class="case reveal"><span class="case__dot"></span><div><h4>运营数据自动分析</h4><p>每周自动产出经营简报，老板抬手就看完。</p></div></div>
+      <div class="cases">
+        <article class="case reveal">
+          <span class="case__id">USE.01</span>
+          <h3>
+            <span class="zh">客户咨询自动回复</span>
+            <span class="en">Inbound support automation</span>
+          </h3>
+          <p class="zh">7×24 不间断响应。<strong>减少 60% 重复客服</strong>，转人工时已带完整上下文。</p>
+          <p class="en">24/7 inbound coverage. <strong>60% fewer repeat tickets</strong>; human handoff arrives with full context.</p>
+          <span class="case__metric">−60% repeat tickets</span>
+        </article>
+        <article class="case reveal">
+          <span class="case__id">USE.02</span>
+          <h3>
+            <span class="zh">销售线索自动跟进</span>
+            <span class="en">Lead nurture &amp; follow-up</span>
+          </h3>
+          <p class="zh">分群打标 + 自动触达 + 销售洞察。<strong>转化率提升 25–40%</strong>。</p>
+          <p class="en">Smart segmentation, automated outreach, sales-ready insights. <strong>Conversion up 25–40%</strong>.</p>
+          <span class="case__metric">+25–40% conversion</span>
+        </article>
+        <article class="case reveal">
+          <span class="case__id">USE.03</span>
+          <h3>
+            <span class="zh">内容营销自动生成</span>
+            <span class="en">Content marketing pipeline</span>
+          </h3>
+          <p class="zh">从主题策划到多平台发布的内容流水线。<strong>内容产能 ×5</strong>，且风格统一。</p>
+          <p class="en">From topic ideation to multi-channel publishing. <strong>5× content velocity</strong> with consistent voice.</p>
+          <span class="case__metric">5× content velocity</span>
+        </article>
+        <article class="case reveal">
+          <span class="case__id">USE.04</span>
+          <h3>
+            <span class="zh">CRM 客户分层</span>
+            <span class="en">Behavioural CRM tiering</span>
+          </h3>
+          <p class="zh">基于行为信号自动分层与触达节奏，<strong>销售把精力放在最该跟的人上</strong>。</p>
+          <p class="en">Tiering and cadence driven by behavioural signals — <strong>sales focuses on the right accounts</strong>.</p>
+          <span class="case__metric">+30% sales focus</span>
+        </article>
+        <article class="case reveal">
+          <span class="case__id">USE.05</span>
+          <h3>
+            <span class="zh">内部任务自动提醒</span>
+            <span class="en">Cross-tool task tracking</span>
+          </h3>
+          <p class="zh">跨工具任务追踪与卡点告警。<strong>项目逾期率下降 50%</strong>。</p>
+          <p class="en">Task tracking and stuck-point alerts across tools. <strong>50% drop in overdue work</strong>.</p>
+          <span class="case__metric">−50% overdue tasks</span>
+        </article>
+        <article class="case reveal">
+          <span class="case__id">USE.06</span>
+          <h3>
+            <span class="zh">运营数据自动分析</span>
+            <span class="en">Auto-generated ops briefings</span>
+          </h3>
+          <p class="zh">每周自动产出经营简报，<strong>老板抬手就看完</strong>，决策更快。</p>
+          <p class="en">Weekly auto-drafted ops briefings — <strong>leadership reads in two minutes</strong>, decides faster.</p>
+          <span class="case__metric">Weekly auto-brief</span>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ WHY US ============ -->
-  <section id="why-us" class="section section--white">
+  <!-- ============ SELECTED WORK ============ -->
+  <section id="work" class="section section--paper">
     <div class="container">
-      <header class="section__head reveal">
-        <span class="eyebrow">为什么选择我们</span>
-        <h2>真正能让 AI 在企业里跑起来的伙伴</h2>
+      <header class="head reveal">
+        <span class="eyebrow">05 &mdash; <span class="zh">项目实绩</span><span class="en">Selected work</span></span>
+        <h2 class="head__title">
+          <span class="zh">三个真实项目，<br/>从诊断到<em>跑出结果。</em></span>
+          <span class="en">Three engagements,<br/>from diagnostic to <em>shipped outcomes.</em></span>
+        </h2>
+        <p class="head__desc zh">客户名称已脱敏，所有指标皆来自上线后的真实业务数据。</p>
+        <p class="head__desc en">Client names anonymized. Every metric measured from production after launch.</p>
       </header>
 
-      <div class="grid grid--4">
-        <div class="why reveal">
-          <div class="why__icon">🧭</div>
-          <h3>先分析流程，再设计 AI</h3>
-          <p>不为了 AI 而 AI。先把流程问题搞清楚，再决定哪里需要 AI，哪里只需要规范化。</p>
-        </div>
-        <div class="why reveal">
-          <div class="why__icon">🛠️</div>
-          <h3>不做空泛咨询，强调落地</h3>
-          <p>我们不只是写报告。从方案设计到上线运行，全程陪跑直到系统真正在用。</p>
-        </div>
-        <div class="why reveal">
-          <div class="why__icon">📈</div>
-          <h3>聚焦 ROI 与效率提升</h3>
-          <p>每个方案都有可量化指标——节省的人时、提升的转化、缩短的周期。</p>
-        </div>
-        <div class="why reveal">
-          <div class="why__icon">🔁</div>
-          <h3>方案可复制、可持续优化</h3>
-          <p>我们交付的是一套可继承的方法和系统，不是一次性的脚本。</p>
-        </div>
+      <div class="work">
+        <article class="work__item reveal">
+          <header class="work__head">
+            <span class="work__id">CS.01</span>
+            <span class="work__industry">
+              <span class="zh">教育 · K-12 连锁</span>
+              <span class="en">Education · K-12 chain</span>
+            </span>
+            <span class="work__time mono">10&nbsp;wk</span>
+          </header>
+
+          <h3 class="work__title">
+            <span class="zh">把 48 小时的销售跟进，<br/>压到 <em>8 分钟首响应。</em></span>
+            <span class="en">From 48-hour follow-up<br/>to an <em>8-minute first reply.</em></span>
+          </h3>
+
+          <div class="work__grid">
+            <div class="work__col">
+              <span class="work__label"><span class="zh">挑战</span><span class="en">Challenge</span></span>
+              <p class="zh">线索散落在微信群、表单、400 电话；销售凭记忆跟进，48 小时之后才首响应——<strong>转化窗口早已关闭。</strong></p>
+              <p class="en">Leads scattered across WeChat, web forms, and inbound calls. Sales replied from memory at 48h — <strong>past the conversion window.</strong></p>
+            </div>
+            <div class="work__col">
+              <span class="work__label"><span class="zh">方案</span><span class="en">Solution</span></span>
+              <p class="zh">统一线索池 + AI 自动分群与即时首响；销售看到的是<strong>带画像与优先级的列表</strong>，不再是 raw 线索。</p>
+              <p class="en">Unified lead pool, AI segmentation, instant first reply. Sales sees <strong>a prioritized list with full profile</strong>, not raw rows.</p>
+            </div>
+          </div>
+
+          <ul class="work__metrics">
+            <li>
+              <span class="work__metric-num">8<span class="work__metric-unit">min</span></span>
+              <span class="work__metric-lbl"><span class="zh">首响应时长</span><span class="en">First reply</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">+38<span class="work__metric-unit">%</span></span>
+              <span class="work__metric-lbl"><span class="zh">线索转化率</span><span class="en">Lead conversion</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">×1.6</span>
+              <span class="work__metric-lbl"><span class="zh">销售人均产能</span><span class="en">Sales productivity</span></span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="work__item reveal">
+          <header class="work__head">
+            <span class="work__id">CS.02</span>
+            <span class="work__industry">
+              <span class="zh">医美 · 区域连锁</span>
+              <span class="en">Healthcare · regional chain</span>
+            </span>
+            <span class="work__time mono">8&nbsp;wk</span>
+          </header>
+
+          <h3 class="work__title">
+            <span class="zh">客服首响应从 6 分钟，<br/>降到 <em>30 秒。</em></span>
+            <span class="en">Inbound first reply, from<br/>6 minutes to <em>30 seconds.</em></span>
+          </h3>
+
+          <div class="work__grid">
+            <div class="work__col">
+              <span class="work__label"><span class="zh">挑战</span><span class="en">Challenge</span></span>
+              <p class="zh">咨询量大、客服紧张；70% 是 FAQ 类重复问题，<strong>高峰时段客户排队 6 分钟以上</strong>，差评率上升。</p>
+              <p class="en">High volume, thin staffing. 70% of tickets were FAQ-class. <strong>Peak-hour wait exceeded 6 minutes</strong>; CSAT dropping.</p>
+            </div>
+            <div class="work__col">
+              <span class="work__label"><span class="zh">方案</span><span class="en">Solution</span></span>
+              <p class="zh">部署带知识库的 AI 客服 Agent，重复问题自动闭环；复杂咨询<strong>带摘要和上下文转人工</strong>，客户无需重复描述。</p>
+              <p class="en">Deployed a knowledge-grounded AI agent. Repeats handled end-to-end; complex cases <strong>handed to humans with full context</strong>, no re-asking.</p>
+            </div>
+          </div>
+
+          <ul class="work__metrics">
+            <li>
+              <span class="work__metric-num">30<span class="work__metric-unit">s</span></span>
+              <span class="work__metric-lbl"><span class="zh">首响应时长</span><span class="en">First reply</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">−65<span class="work__metric-unit">%</span></span>
+              <span class="work__metric-lbl"><span class="zh">人工分流量</span><span class="en">Human handoff</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">+21<span class="work__metric-unit">pp</span></span>
+              <span class="work__metric-lbl"><span class="zh">客户满意度</span><span class="en">CSAT</span></span>
+            </li>
+          </ul>
+        </article>
+
+        <article class="work__item reveal">
+          <header class="work__head">
+            <span class="work__id">CS.03</span>
+            <span class="work__industry">
+              <span class="zh">制造 · B2B 中型企业</span>
+              <span class="en">Manufacturing · mid-market B2B</span>
+            </span>
+            <span class="work__time mono">12&nbsp;wk</span>
+          </header>
+
+          <h3 class="work__title">
+            <span class="zh">老板的周一早晨，<br/>从 <em>4 小时</em> 到 5 分钟。</span>
+            <span class="en">The Monday morning brief,<br/>from <em>4 hrs</em> to 5 minutes.</span>
+          </h3>
+
+          <div class="work__grid">
+            <div class="work__col">
+              <span class="work__label"><span class="zh">挑战</span><span class="en">Challenge</span></span>
+              <p class="zh">销售、生产、库存数据散在 6 个系统，<strong>老板每周末手动拼凑经营简报</strong>，决策周期延迟 7 天以上。</p>
+              <p class="en">Sales, production, and inventory lived across six systems. <strong>The CEO hand-assembled the weekly brief</strong> — decisions ran 7+ days late.</p>
+            </div>
+            <div class="work__col">
+              <span class="work__label"><span class="zh">方案</span><span class="en">Solution</span></span>
+              <p class="zh">数据集成 + AI 经营简报流水线：每周一早自动产出<strong>异常清单与建议动作</strong>，逐项可追溯到原始数据。</p>
+              <p class="en">Integrated the six systems and built an AI briefing pipeline. Every Monday it ships <strong>an anomaly list with recommended actions</strong>, each line traceable to source.</p>
+            </div>
+          </div>
+
+          <ul class="work__metrics">
+            <li>
+              <span class="work__metric-num">5<span class="work__metric-unit">min</span></span>
+              <span class="work__metric-lbl"><span class="zh">简报准备时长</span><span class="en">Brief prep time</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">−71<span class="work__metric-unit">%</span></span>
+              <span class="work__metric-lbl"><span class="zh">决策周期</span><span class="en">Decision cycle</span></span>
+            </li>
+            <li>
+              <span class="work__metric-num">100<span class="work__metric-unit">%</span></span>
+              <span class="work__metric-lbl"><span class="zh">指标可追溯</span><span class="en">Traceable</span></span>
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="work__foot reveal">
+        <span class="zh">还在犹豫你的业务能否复制这些结果？<a class="link link--arrow" href="#cta"><span>来一次免费诊断 <span aria-hidden="true">→</span></span></a></span>
+        <span class="en">Curious whether your operation can replicate these outcomes? <a class="link link--arrow" href="#cta"><span>Book a free diagnostic <span aria-hidden="true">→</span></span></a></span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ MANIFESTO ============ -->
+  <section id="manifesto" class="section section--ink">
+    <div class="container">
+      <header class="head head--invert reveal">
+        <span class="eyebrow eyebrow--invert">06 &mdash; <span class="zh">主张</span><span class="en">Manifesto</span></span>
+        <h2 class="head__title">
+          <span class="zh">客户为何<em>选择我们。</em></span>
+          <span class="en">Why companies<br/><em>choose us.</em></span>
+        </h2>
+      </header>
+
+      <div class="manifesto">
+        <article class="ms reveal">
+          <span class="ms__num">i.</span>
+          <blockquote class="ms__quote zh">
+            我们<em>不为了用 AI 而用 AI。</em>
+          </blockquote>
+          <blockquote class="ms__quote en">
+            We don't deploy AI <em>for the sake of AI.</em>
+          </blockquote>
+          <p class="ms__body zh">
+            先把流程问题搞清楚，再决定哪里需要 AI、哪里只需要规范化。<br/>
+            很多场景，一张清晰的 SOP 比一个 LLM 管用得多。
+          </p>
+          <p class="ms__body en">
+            We map the process first. Only then do we decide what needs AI and what just needs cleaner SOPs.<br/>
+            More often than you'd think, a one-page playbook beats a language model.
+          </p>
+        </article>
+
+        <article class="ms reveal">
+          <span class="ms__num">ii.</span>
+          <blockquote class="ms__quote zh">
+            报告不能让公司运转。<em>系统才能。</em>
+          </blockquote>
+          <blockquote class="ms__quote en">
+            Reports don't run companies. <em>Systems do.</em>
+          </blockquote>
+          <p class="ms__body zh">
+            我们不只是写报告。从方案设计到上线运行，全程陪跑——直到系统真正在你公司每天被使用、被信任、产生回报。
+          </p>
+          <p class="ms__body en">
+            We don't write reports and walk away. We stay with the build, the rollout, the tuning — until the system is used daily, trusted, and earning.
+          </p>
+        </article>
+
+        <article class="ms reveal">
+          <span class="ms__num">iii.</span>
+          <blockquote class="ms__quote zh">
+            <em>无法衡量的，</em>我们就不提案。
+          </blockquote>
+          <blockquote class="ms__quote en">
+            If we can't <em>measure it,</em> we don't pitch it.
+          </blockquote>
+          <p class="ms__body zh">
+            每个方案都绑定可量化指标——节省的人时、提升的转化、缩短的周期、回收的成本。<br/>
+            没有 KPI 的提案，不是提案，是猜测。
+          </p>
+          <p class="ms__body en">
+            Every proposal carries measurable KPIs — hours saved, conversion gained, cycles shortened, cost recovered.<br/>
+            A proposal without numbers isn't a proposal. It's a guess.
+          </p>
+        </article>
+
+        <article class="ms reveal">
+          <span class="ms__num">iv.</span>
+          <blockquote class="ms__quote zh">
+            最好的系统，<em>是你能自己运转的系统。</em>
+          </blockquote>
+          <blockquote class="ms__quote en">
+            The best system is the one <em>you can keep running.</em>
+          </blockquote>
+          <p class="ms__body zh">
+            我们交付的是一套可继承的方法和系统——而不是只有我们能维护的"黑盒"。<br/>
+            培训、文档、运维手册一并交接，让你独立把它跑下去。
+          </p>
+          <p class="ms__body en">
+            What we hand over is a method and a system that you own — not a black box only we can maintain.<br/>
+            Training, documentation, and runbooks come with the build. You keep operating it.
+          </p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
-  <section id="cta" class="cta">
-    <div class="cta__bg" aria-hidden="true"></div>
-    <div class="container cta__inner reveal">
-      <span class="badge badge--invert">
-        <span class="badge__dot badge__dot--white"></span>
-        现在开始，免费咨询
-      </span>
-      <h2>想知道你的企业哪些流程<br/>可以被 AI 重构？</h2>
-      <p>预约一次 AI 运营流程诊断，我们将帮你找出最值得自动化的业务环节，并给出可执行路径。</p>
+  <section id="cta" class="section section--cta">
+    <div class="container cta__inner">
+      <div class="cta__content reveal">
+        <span class="eyebrow">07 &mdash; <span class="zh">开始合作</span><span class="en">Get started</span></span>
+        <h2 class="cta__title">
+          <span class="zh">想知道你的企业<br/>哪些流程可以被 AI <em>重构？</em></span>
+          <span class="en">Want to know which<br/>processes you can rebuild <em>with AI?</em></span>
+        </h2>
+        <p class="cta__lede zh">
+          预约一次 AI 运营流程诊断。<br/>
+          我们将帮你找出最值得自动化的业务环节，并给出可执行的路径图——<strong>完全免费、无任何义务。</strong>
+        </p>
+        <p class="cta__lede en">
+          Book a free AI operations diagnostic.<br/>
+          We'll help you identify the highest-leverage processes to automate and outline a concrete path to get there — <strong>free, no commitment.</strong>
+        </p>
 
-      <div class="cta__actions">
-        <a class="btn btn--white btn--lg" href="mailto:contact@aiopsflow.com?subject=%E9%A2%84%E7%BA%A6%E5%85%8D%E8%B4%B9%E8%AF%8A%E6%96%AD%20-%20AI%20OpsFlow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          预约免费诊断
-        </a>
-        <a class="btn btn--outline-light btn--lg" href="mailto:contact@aiopsflow.com">
-          直接发邮件咨询
-        </a>
+        <div class="cta__actions">
+          <a class="btn btn--solid btn--lg" href="mailto:contact@aiopsflow.com?subject=Book%20a%20free%20diagnostic%20-%20AI%20OpsFlow">
+            <span><span class="zh">预约免费诊断</span><span class="en">Book a free diagnostic</span></span>
+            <span class="btn__arrow">→</span>
+          </a>
+          <a class="link link--arrow" href="mailto:contact@aiopsflow.com">
+            <span class="zh">或直接发邮件</span><span class="en">Or email us directly</span>
+            &nbsp;contact@aiopsflow.com
+          </a>
+        </div>
+
+        <ul class="cta__trust">
+          <li><span>01</span><span class="zh">完全免费</span><span class="en">Free</span></li>
+          <li><span>02</span><span class="zh">1 个工作日内回复</span><span class="en">Reply within 1 business day</span></li>
+          <li><span>03</span><span class="zh">不强制销售</span><span class="en">No hard sell</span></li>
+          <li><span>04</span><span class="zh">信息严格保密</span><span class="en">Strictly confidential</span></li>
+        </ul>
       </div>
 
-      <ul class="cta__trust">
-        <li>✓ 完全免费</li>
-        <li>✓ 1 个工作日内回复</li>
-        <li>✓ 不强制销售</li>
-        <li>✓ 信息严格保密</li>
-      </ul>
+      <div class="cta__side reveal">
+        <span class="cta__side-label">
+          <span class="zh">合作模式</span><span class="en">Engagement model</span>
+        </span>
+        <div class="cta__side-row">
+          <span><span class="zh">流程诊断</span><span class="en">Initial diagnostic</span></span>
+          <span class="mono">2–4 weeks</span>
+        </div>
+        <div class="cta__side-row">
+          <span><span class="zh">设计与交付</span><span class="en">Build &amp; deploy</span></span>
+          <span class="mono">8–16 weeks</span>
+        </div>
+        <div class="cta__side-row">
+          <span><span class="zh">优化托管</span><span class="en">Optimization retainer</span></span>
+          <span class="mono">Ongoing</span>
+        </div>
+        <div class="cta__side-divider"></div>
+        <span class="cta__side-label">
+          <span class="zh">服务行业</span><span class="en">Industries</span>
+        </span>
+        <p class="cta__side-text zh">
+          教育培训 · 医疗健康 · 零售连锁 · 专业服务 · 本地服务 · 制造业
+        </p>
+        <p class="cta__side-text en">
+          Education · Healthcare · Retail · Professional services · Local services · Manufacturing
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#hero" class="nav__brand">
-          <span class="nav__logo" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none">
-              <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#logoGrad2)"/>
-              <path d="M10 21V11l6 6 6-6v10" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-              <defs>
-                <linearGradient id="logoGrad2" x1="2" y1="2" x2="30" y2="30">
-                  <stop stop-color="#3B82F6"/>
-                  <stop offset="1" stop-color="#7C3AED"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-          <span class="nav__name">
-            <strong>AI OpsFlow</strong>
-            <small>Rebuild Your Operations with AI</small>
-          </span>
-        </a>
-        <p class="footer__desc">
-          帮助中小企业分析运营流程，落地 AI 自动化解决方案，实现降本、提效与增长。
-        </p>
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#hero" class="nav__brand">
+            <span class="nav__mark" aria-hidden="true"></span>
+            <span class="nav__wordmark">AI <em>OpsFlow</em></span>
+          </a>
+          <p class="footer__tagline zh">
+            用 AI 重构你的运营流程。<br/>
+            分析 · 优化 · 自动化。
+          </p>
+          <p class="footer__tagline en">
+            Rebuild Your Operations with AI.<br/>
+            Analyze · Optimize · Automate.
+          </p>
+        </div>
+
+        <div class="footer__cols">
+          <div>
+            <h4><span class="zh">站点</span><span class="en">Sitemap</span></h4>
+            <ul>
+              <li><a href="#approach"><span class="zh">路径</span><span class="en">Approach</span></a></li>
+              <li><a href="#methodology"><span class="zh">方法</span><span class="en">Methodology</span></a></li>
+              <li><a href="#services"><span class="zh">服务</span><span class="en">Services</span></a></li>
+              <li><a href="#cases"><span class="zh">应用场景</span><span class="en">Use cases</span></a></li>
+              <li><a href="#work"><span class="zh">项目实绩</span><span class="en">Selected work</span></a></li>
+              <li><a href="#manifesto"><span class="zh">主张</span><span class="en">Manifesto</span></a></li>
+            </ul>
+          </div>
+          <div>
+            <h4><span class="zh">联络</span><span class="en">Contact</span></h4>
+            <ul>
+              <li><a href="mailto:contact@aiopsflow.com">contact@aiopsflow.com</a></li>
+              <li><a href="#cta"><span class="zh">预约诊断</span><span class="en">Book a diagnostic</span> →</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4><span class="zh">办公时间</span><span class="en">Office</span></h4>
+            <ul>
+              <li><span class="zh">周一至周五 · 09:00–19:00</span><span class="en">Mon–Fri · 09:00–19:00</span></li>
+              <li><span class="zh">24 小时内响应</span><span class="en">Response &lt; 24 hours</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="footer__cols">
-        <div>
-          <h4>导航</h4>
-          <ul>
-            <li><a href="#solution">解决方案</a></li>
-            <li><a href="#methodology">方法论</a></li>
-            <li><a href="#services">服务</a></li>
-            <li><a href="#use-cases">应用场景</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>联系我们</h4>
-          <ul>
-            <li><a href="mailto:contact@aiopsflow.com">contact@aiopsflow.com</a></li>
-            <li><a href="#cta">预约免费诊断</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <div class="container">
-        <span>&copy; <span id="year">2026</span> AI OpsFlow. 保留所有权利。</span>
-        <span>Analyze · Optimize · Automate</span>
+      <div class="footer__bottom">
+        <span>&copy; <span id="year">2026</span> AI OpsFlow.</span>
+        <span class="mono">v.2026.05 — All rights reserved.</span>
       </div>
     </div>
   </footer>
