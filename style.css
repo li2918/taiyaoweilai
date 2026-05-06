@@ -4,23 +4,25 @@
    ==================================================================== */
 
 :root {
-  /* Palette — restrained, editorial */
-  --c-ink:        #0A0A0A;          /* near-black for text & dark sections   */
-  --c-ink-2:      #15171C;          /* subtle off-black for dark blocks      */
-  --c-paper:      #F5F2EC;          /* warm cream — section breaks           */
-  --c-paper-2:    #EFEBE2;          /* deeper cream                          */
+  /* Palette — cool / tech, editorial structure */
+  --c-ink:        #06091A;          /* deep navy near-black for dark sections */
+  --c-ink-2:      #0F1430;          /* lifted ink for layered surfaces        */
+  --c-paper:      #ECF0F8;          /* cool off-white — section breaks        */
+  --c-paper-2:    #DDE4F1;          /* deeper cool tint                       */
   --c-white:      #FFFFFF;
-  --c-rule:       #D6D2C7;          /* hairlines on cream                    */
-  --c-rule-soft:  #E8E4DA;
-  --c-rule-dark:  rgba(255,255,255,0.14); /* hairlines on ink                */
-  --c-text:       #0A0A0A;
-  --c-text-2:     #2A2D33;
-  --c-muted:      #6F6B62;          /* muted body on cream                   */
-  --c-muted-dark: rgba(232,228,216,0.55);
+  --c-rule:       #C5CDDD;          /* cool hairlines on paper                */
+  --c-rule-soft:  #D9E0EC;
+  --c-rule-dark:  rgba(160,200,255,0.16); /* cool hairlines on ink            */
+  --c-text:       #06091A;
+  --c-text-2:     #1A2240;
+  --c-muted:      #5A6582;          /* cool muted body on paper               */
+  --c-muted-dark: rgba(190,210,240,0.56);
 
-  --c-accent:     #1B3FD9;          /* deep electric blue, single accent     */
-  --c-accent-ink: #0E2196;
-  --c-accent-light: #B7C2F2;
+  --c-accent:     #3D6BFF;          /* electric blue — primary accent         */
+  --c-accent-ink: #1F47D9;
+  --c-accent-light: #B5C5FF;
+  --c-accent-2:   #00D4FF;          /* cyan — metric / highlight accent       */
+  --c-glow:       0 0 28px rgba(61,107,255,0.32);
 
   /* Type — Latin uses Fraunces / Inter; CJK falls through to Noto Serif SC / PingFang */
   --ff-serif: "Fraunces", "Source Serif 4", "Noto Serif SC", "Songti SC", "STSong",
@@ -620,12 +622,12 @@ body {
   gap: 6px;
   font-size: 10px;
   letter-spacing: 0.16em;
-  color: #6EE7A8;
+  color: var(--c-accent-2);
   text-transform: uppercase;
 }
 .panel__pulse-dot {
   width: 7px; height: 7px;
-  background: #6EE7A8;
+  background: var(--c-accent-2);
   border-radius: 50%;
   position: relative;
 }
@@ -634,7 +636,7 @@ body {
   position: absolute;
   inset: -3px;
   border-radius: 50%;
-  background: #6EE7A8;
+  background: var(--c-accent-2);
   opacity: 0.4;
   animation: ping 1.4s ease-out infinite;
 }
@@ -676,7 +678,8 @@ body {
   position: absolute;
   inset: 0;
   width: 0;
-  background: linear-gradient(90deg, var(--c-accent-light), var(--c-paper));
+  background: linear-gradient(90deg, var(--c-accent), var(--c-accent-2));
+  box-shadow: 0 0 12px rgba(0,212,255,0.45);
   transition: width 1.6s cubic-bezier(0.22, 0.8, 0.34, 1);
 }
 .bar.is-animate .bar__fill { width: var(--w); }
@@ -1120,6 +1123,69 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.work__savings {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 22px 28px;
+  background: linear-gradient(96deg, var(--c-paper-2) 0%, var(--c-paper) 70%);
+  border: 1px solid var(--c-rule);
+  border-left: 3px solid var(--c-accent);
+  overflow: hidden;
+}
+.work__savings::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(620px circle at 100% -20%, rgba(0,212,255,0.16), transparent 55%);
+  pointer-events: none;
+}
+.work__savings-lbl {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  position: relative;
+  z-index: 1;
+}
+.work__savings-fig {
+  font-family: var(--ff-serif);
+  font-feature-settings: "ss01", "tnum";
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.work__savings-num {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-accent);
+  text-shadow: 0 0 28px rgba(61,107,255,0.30);
+}
+.work__savings-unit {
+  font-family: var(--ff-mono);
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--c-accent-2);
+  font-weight: 500;
+  margin-left: 6px;
+}
+.work__savings-note {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--c-muted);
+  position: relative;
+  z-index: 1;
+  flex-basis: 100%;
+}
 .work__title {
   font-family: var(--ff-serif);
   font-weight: 400;
@@ -1189,7 +1255,7 @@ body {
   font-family: var(--ff-mono);
   font-size: 14px;
   letter-spacing: 0.04em;
-  color: var(--c-accent);
+  color: var(--c-accent-2);
   margin-left: 2px;
 }
 .work__metric-lbl {
